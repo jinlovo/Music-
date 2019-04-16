@@ -35,14 +35,14 @@ router.get('/user/register',async(ctx,next)=>{
 .get('/user/add',async(ctx,next)=>{
     ctx.render('add')
 })
-.get('/user/add',async(ctx,next)=>{
-    ctx.render('add')
+.get('/music/edit-music?id=1',async(ctx,next)=>{
+    ctx.render('edit')
 })
 
 
 render(app,{
     // 模板路径
-    root:path.join(__dirname,'view'),
+    root:path.join(__dirname,'views'),
     extname:'.html',
     // 开发环境配置
     debug:process.env.NODE_EVN !=='production'
