@@ -13,5 +13,6 @@ module.exports = {
     resgiterUser: async (...user) => {
         let result = await db.p('insert into users (username,password,email) values(?,?,?)', user)
         return result
-    }
+    },
+    
 }

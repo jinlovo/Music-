@@ -4,7 +4,7 @@ const router = new Router()
 const userController = require('./controller/userController')
 const musicController = require('./controller/musicController')
 
-router.get('/user/do-register',userController.showRegister)
+router.get('/user/register',userController.showRegister)
 .get('/user/login',userController.showLogin)
 .get('/music/index',musicController.showIndex)
 .get('/music/add',musicController.showAdd)

@@ -7,10 +7,10 @@ const userController = require('../controller/userController')
 // 验证用户是否存在
 userRouter.post('/user/check-username',userController.checkUser)
 // 注册
-.post('/user/do-register',userController.doResgiter)
+.post('/user/register',userController.doResgiter)
 
 // 登录
-.post('/user/do-login',userController.doLogin)
+.post('/user/login',userController.doLogin)
 
 // // 登录接口
 // .post('/user/do-login',async(ctx,next)=>{
