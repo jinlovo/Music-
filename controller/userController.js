@@ -75,16 +75,33 @@ module.exports = {
     doLogin: async (ctx, next) => {
        
             let{
-                username
+                username,password
             } = ctx.requeest.body;
             let users = await usersModel.findUserByUsername(username)
             console.log(users.length ==0)
-            if (users.length == 0 ) {
+            if (users.length === 0 ) {
                 ctx.body = {
                     code: '002',
-                    msg: '用户名不存在'
+                    msg: '用户名不存在请去注册'
                 }
                 return;
+            }
+            let user = users[0] // 数据的唯一性
+            if(password === user.password){
+                // 密码一致
+               
+                ctx.body = {
+                    code: '001',
+                    msg: '登录成功'
+                }
+                ctx.session.user = {
+                    username,
+                }
+                return
+            }
+            ctx.body = {
+                code:'002',
+                msg:'用户名或密码不一致'
             }
         }
     }

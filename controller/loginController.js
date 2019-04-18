@@ -1,8 +1,10 @@
 
-const usersModel = require('../modules/usersModel')
 module.exports = {
-    showLogin: async ctx =>{
+    showLogin:async(ctx,next)=>{
         ctx.render('login')
     },
+    // doLogin: async ctx =>{
+    //     ctx.render('login')
+    // },
     
 }

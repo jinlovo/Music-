@@ -25,6 +25,7 @@ render(app,{
     //  开发环境配置
     debug: process.env.NODE_ENV !== 'production'
 })
+app.keys = ['jjjjdfhdfdkffk']
 let store = {
     myStore: {},
     get: function (key) {

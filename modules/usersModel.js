@@ -2,7 +2,7 @@ const db = require('./db')
 module.exports = {
     findUserByUsername: async (username) => {
         // 用请求参数username 作为查询条件
-        let result = await db.p('select 1 from users where username=?', [username])
+        let result = await db.p('select * from users where username=?', [username])
         return result
     },
     findUserByUE: async (username, email) => {
