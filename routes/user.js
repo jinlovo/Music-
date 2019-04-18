@@ -1,17 +1,24 @@
-const Router = require('koa-router');
-const router = new Router()
+const Router = require('koa-router')
+const userRouter = new Router()
+const userController = require('../controller/userController')
 
-// 写接口
-//注册接口
-router.post('/user/do-register',async(ctx,next)=> {
-    
-})
+
+// 路由：1：提规则；2;做什么
 // 验证用户是否存在
+userRouter.post('/user/check-username',userController.checkUser)
+// 注册
+.post('/user/do-register',userController.doResgiter)
 
+// 登录
+.post('/user/do-login',userController.doLogin)
 
-// 登录接口
-.post('/user/do-login',async(ctx,next)=> {
-    
-})
+// // 登录接口
+// .post('/user/do-login',async(ctx,next)=>{
+//     // 1: 读数据：获取请求体中内容 
 
-module.exports = router;
+//     // 2: 从数据库中查询数据，查询的条件为客户端发过来的数据
+
+//     // 3： 处理查询结果吧 
+// })
+
+module.exports = userRouter

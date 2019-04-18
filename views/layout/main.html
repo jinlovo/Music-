@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>我的音乐</title>
@@ -11,13 +10,14 @@
 
 <!-- 头部(包含其他页面include)-->
   {{ include '../particals/header.html'}}
-<!-- 中部变化(留坑) -->
-  {{block 'content'  }}
+<!-- 中部变化(留坑)  模板继承 -->
+  {{block 'content'}}
     默认模板
   {{/block}}
-
 
 <!-- 底部(包含其他页面include) -->
   {{include '../particals/footer.html' }}
 </body>
 </html>
+
+
