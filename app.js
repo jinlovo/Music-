@@ -43,6 +43,8 @@ app.use(bodyparser())
 app.use(static(path.join(__dirname),'./public'))
 // 没有写session 配置信息 
 app.use(session({store},app))
+
+
 app.use(router.routes(),router.allowedMethods())
 app.use(userRouter.routes(),userRouter.allowedMethods())
 app.use(musicRouter.routes(),musicRouter.allowedMethods())

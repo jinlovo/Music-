@@ -4,5 +4,10 @@ module.exports = {
     },
     showAdd: async(ctx,next)=>{
         ctx.render('add')
+    },
+    async addMusic(ctx,next){
+        // 接收请求参数
+       
+
     }
 }

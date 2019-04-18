@@ -76,7 +76,7 @@ module.exports = {
        
             let{
                 username,password
-            } = ctx.requeest.body;
+            } = ctx.request.body;
             let users = await usersModel.findUserByUsername(username)
             console.log(users.length ==0)
             if (users.length === 0 ) {

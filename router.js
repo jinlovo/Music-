@@ -12,4 +12,4 @@ router.get('/user/register',userController.showRegister)
     ctx.render('edit')
 })
 
-module.exports = router
+module.exports = router;

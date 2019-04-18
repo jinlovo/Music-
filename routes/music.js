@@ -1,17 +1,11 @@
 // 处理的post 请求
 const Router = require('koa-router')
-const router =  new Router()
+const musicRouter =  new Router()
+const musicControllre = require('../controller/musicController')
 
-.get('/music/index',async(ctx,next)=>{
-    ctx.render('index')
-})
-.get('/music/add',async(ctx,next)=>{
-    ctx.render('add')
-})
-.get('/music/edit-music?id=1',async(ctx,next)=>{
-    ctx.render('edit')
-})
+
+musicRouter.post('/music/add',musicControllre.addMusic)
 
 
 
-module.exports = router;
+module.exports = musicRouter;
