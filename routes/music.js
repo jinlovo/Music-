@@ -5,7 +5,7 @@ const musicControllre = require('../controller/musicController')
 
 
 musicRouter.post('/music/add',musicControllre.addMusic)
-
-
+.put('/api/update-music',musicControllre.updateMusic)
+.delete('/api/del-music',musicControllre.deleteMusic)
 
 module.exports = musicRouter;

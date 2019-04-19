@@ -33,7 +33,7 @@ module.exports = {
             username,
             password,
             email
-        } = ctx.request.body
+        } = ctx.request.body;
         // let Reg = /^\s\w{8,12}/
         // let emailReg =/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/ 
         // - 2：拿请求参数与数据库中数据进行比价  username or emaill
