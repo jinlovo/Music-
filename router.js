@@ -8,12 +8,9 @@ router.get('/user/register',userController.showRegister)
 .get('/user/login',userController.showLogin)
 .get('/music/index',musicController.showIndex)
 .get('/music/add',musicController.showAdd)
-.get('/music/edit-music?id=1',async(ctx,next)=>{
+.get('/music/edit-music',async(ctx,next)=>{
+    console.log('11111111')
     ctx.render('edit')
 })
-
-
-
-
 module.exports = router;
 

@@ -7,13 +7,14 @@ const static = require('koa-static')
 const session = require('koa-session')
 const formidable = require('koa-formidable')
 const captchapng = require('captchapng2')
-const config = require('./routes/config')
+const config = require('./config')
 
 
 // 导入自定义路由中间件
 const routers = require('./router')
 const userRouter = require('./routes/user')
-const musicRouter = require('./routes/music')
+const musicRouter = require('./routes/music');
+console.log(config.renderRoot)
 
 const app = new koa()
 
@@ -64,6 +65,7 @@ app.use(async(ctx,next)=>{
 // 将第三方中间件挂在到应用中间件上 
 // app.use(bodyparser())
 app.use(static(config.staticBase),config.staticDir)
+
 // 没有写session 配置信息 
 app.use(session({store},app))
 app.use(formidable({
