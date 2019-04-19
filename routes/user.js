@@ -21,4 +21,6 @@ userRouter.post('/user/check-username',userController.checkUser)
 //     // 3： 处理查询结果吧 
 // })
 
+.get('/user/get-pic',userController.getPic)
+
 module.exports = userRouter

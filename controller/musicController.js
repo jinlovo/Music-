@@ -4,7 +4,8 @@ function optUpload(ctx){
     let {
         title,
         singer,
-        time
+        time,   
+
     } = ctx.request.body;
     let saveSingObj = {
         title,
@@ -61,10 +62,11 @@ module.exports = {
     // 更新音乐
     updateMusic: async (ctx,next) =>{
         let opts = optUpload(ctx)
-        let id = ctx.request.body.uid;
+        let id = ctx.request.body.id;
         console.log(opts)
          console.log(id)
         opts = Object.assign(opts,{id})
+        console.log(opts)
         let result = await musicModel.updataMusic(opts)
         if(result.affectedRows !==1){
             ctx.throw('更新失败')
