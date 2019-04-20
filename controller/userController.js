@@ -1,9 +1,14 @@
 const usersModel = require('../modules/usersModel')
 const captchapng = require('captchapng2')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 44d63a679cfd64662c40362065041d0118b9d1f7
 module.exports = {
     showRegister: async ctx => {
+        console.log('11111111111')
         ctx.render('register')
+        
     },
     checkUser: async (ctx, next) => {
         // 1：获取到 请求体中 username
@@ -31,8 +36,10 @@ module.exports = {
     doRegister: async (ctx, next) => {
         // 1:接收参数
         let {
+            v_code,
             username,
             password,
+<<<<<<< HEAD
             email,
             v_code
         } = ctx.request.body
@@ -45,6 +52,18 @@ module.exports = {
             return
         }
         
+=======
+            email
+        } = ctx.request.body;
+
+        if(v_code !== ctx.session.v_code){
+            ctx.body = {
+                code: '002',
+                msg: '您输入的验证码不正确'
+            }
+            return;
+        }
+>>>>>>> 44d63a679cfd64662c40362065041d0118b9d1f7
         // let Reg = /^\s\w{8,12}/
         // let emailReg =/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/ 
         // - 2：拿请求参数与数据库中数据进行比价  username or emaill
@@ -100,6 +119,7 @@ module.exports = {
                 code: '002',
                 msg: "用户不存在"
             }
+<<<<<<< HEAD
             return
         }
         // 3 比较密码是否一致（请求参数密码，与users表password字段比价
@@ -142,3 +162,17 @@ module.exports = {
         
     }
 }
+=======
+
+        },
+        getPic: async (ctx,next) =>{
+            let rand = parseInt(Math.random() * 9000 + 1000);
+            ctx.session.v_code = rand + '';
+            let png = new captchapng(80, 30, rand); 
+            ctx.body = png.getBuffer()
+            ctx.set({'Content-Type':'image/png'})
+        
+        }
+
+    }
+>>>>>>> 44d63a679cfd64662c40362065041d0118b9d1f7

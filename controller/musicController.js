@@ -7,7 +7,8 @@ function optUpload(ctx) {
     let {
         title,
         singer,
-        time
+        time,   
+
     } = ctx.request.body;
     let saveSingObj = {
         title,
@@ -93,11 +94,18 @@ module.exports = {
         // 1: 接收请求参数
         let opts = optUpload(ctx)
         let id = ctx.request.body.id;
+<<<<<<< HEAD
         // 合并对象处理
         opts = Object.assign(opts, {
             id
         })
         // 更新数据
+=======
+        console.log(opts)
+         console.log(id)
+        opts = Object.assign(opts,{id})
+        console.log(opts)
+>>>>>>> 44d63a679cfd64662c40362065041d0118b9d1f7
         let result = await musicModel.updataMusic(opts)
         if (result.affectedRows !== 1) {
             // 没有给更新成功

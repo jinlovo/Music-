@@ -41,15 +41,15 @@ let store = {
 }
 
 // 优雅的异常处理  ?????
-app.use(async (ctx,next)=>{
-    try{
-        // 先放行
-        await next()
-    } catch(e){
-        console.log(e)
-        ctx.render('error',{msg:'出错误了快回去看看吧'})
-    }
-})
+// app.use(async (ctx,next)=>{
+//     try{
+//         // 先放行
+//         await next()
+//     } catch(e){
+//         console.log(e)
+//         ctx.render('error',{msg:'出错误了快回去看看吧'})
+//     }
+// })
 
 
 

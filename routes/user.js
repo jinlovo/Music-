@@ -24,4 +24,6 @@ userRouter.post('/user/check-username',userController.checkUser)
 
 .get('/user/get-pic',userController.getPic)
 
+.get('/user/get-pic',userController.getPic)
+
 module.exports = userRouter
